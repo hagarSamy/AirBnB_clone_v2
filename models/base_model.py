@@ -8,6 +8,8 @@ import models
 
 
 Base = declarative_base()
+
+
 class BaseModel:
     """A base class for all hbnb models"""
     id = Column(String(60),
@@ -29,10 +31,10 @@ class BaseModel:
             for k in kwargs.keys():
                 if k == "updated_at":
                     kwargs[k] = datetime.strptime(kwargs['updated_at'],
-                                                        '%Y-%m-%dT%H:%M:%S.%f')
+                                                  '%Y-%m-%dT%H:%M:%S.%f')
                 if k == "created_at":
                     kwargs[k] = datetime.strptime(kwargs['created_at'],
-                                                        '%Y-%m-%dT%H:%M:%S.%f')
+                                                  '%Y-%m-%dT%H:%M:%S.%f')
             # del kwargs['__class__']
             # Remove `__class__` key if it exists
             kwargs.pop('__class__', None)

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ State Module for HBNB project """
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 import os
 from sqlalchemy import String, Column
 from sqlalchemy.orm import relationship, backref
@@ -8,7 +8,7 @@ import models
 from models. city import City
 
 
-class State(BaseModel):
+class State(BaseModel, Base):
     """ State class """
     if os.getenv('HBNB_TYPE_STORAGE') == 'db':
         __tablename__ = "states"
@@ -17,6 +17,7 @@ class State(BaseModel):
 
     else:
         name = ""
+
         @property
         def cities(self):
             """getter for cities relationship for FileStorage"""
