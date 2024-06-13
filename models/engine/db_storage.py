@@ -41,10 +41,10 @@ class DBStorage:
         classes = {
             'State': State,
             'City': City,
-            # 'User': User,
-            # 'Place': Place,
-            # 'Review': Review,
-            # 'Amenity': Amenity
+            'User': User,
+            'Place': Place,
+            'Review': Review,
+            'Amenity': Amenity
         }
         res = {}
         if cls and cls in classes:
